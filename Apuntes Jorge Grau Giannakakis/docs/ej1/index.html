@@ -1,0 +1,539 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../act2/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../img/logoMarkdown.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>3. Ejercicios configuración - Apuntes Jorge Grau Giannakakis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gestion-de-carpetas-en-linux" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Apuntes Jorge Grau Giannakakis" class="md-header__button md-logo" aria-label="Apuntes Jorge Grau Giannakakis" data-md-component="logo">
+      
+  <img src="../img/logoMarkdown.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apuntes Jorge Grau Giannakakis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. Ejercicios configuración
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Apuntes Jorge Grau Giannakakis" class="md-nav__button md-logo" aria-label="Apuntes Jorge Grau Giannakakis" data-md-component="logo">
+      
+  <img src="../img/logoMarkdown.png" alt="logo">
+
+    </a>
+    Apuntes Jorge Grau Giannakakis
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../act1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción SO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../act2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Configuracion Carpetas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Ejercicios configuración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="gestion-de-carpetas-en-linux">Gestión de carpetas en Linux</h1>
+<p>Crea un documento e incluye los resultados que te muestre el terminal en cada paso.</p>
+<h1 id="parte-1-creacion-de-carpetas">Parte 1: Creación de carpetas</h1>
+<h3 id="pasos-previos">Pasos previos</h3>
+<p>Crea una carpeta llamada <strong>ejercicio 1</strong></p>
+<h3 id="ejercicio-1">Ejercicio 1</h3>
+<p>Crea las siguientes carpetas dentro de ejercicio 1:</p>
+<pre><code class="language-bash">practica_linux
+documentos
+imagenes
+</code></pre>
+<p>Luego verifica que se han creado:</p>
+<pre><code class="language-bash">ls
+</code></pre>
+<h3 id="ejercicio-2">Ejercicio 2</h3>
+<p>Dentro de <code>practica_linux</code>, crea esta estructura:</p>
+<pre><code>practica_linux/
+ ├── proyectos/
+ ├── notas/
+ └── backups/
+</code></pre>
+<div style="page-break-after: always;"></div>
+
+<h1 id="parte-2-ver-permisos">Parte 2: Ver permisos</h1>
+<h3 id="ejercicio-3">Ejercicio 3</h3>
+<p>Visualiza los permisos de todas las carpetas creadas:</p>
+<pre><code class="language-bash">ls -l
+</code></pre>
+<p>Responde a las siguientes preguntas:</p>
+<ul>
+<li>¿Qué permisos tiene cada carpeta?</li>
+<li>¿Quién es el propietario?</li>
+</ul>
+<hr />
+<h1 id="parte-3-modificar-permisos">Parte 3: Modificar permisos</h1>
+<h3 id="ejercicio-4">Ejercicio 4</h3>
+<p>Cambia los permisos de la carpeta <code>notas</code> para que:</p>
+<ul>
+<li>El usuario tenga todos los permisos</li>
+<li>El grupo pueda leer y ejecutar</li>
+<li>Otros no tengan acceso</li>
+</ul>
+<h3 id="ejercicio-5">Ejercicio 5</h3>
+<p>Haz que la carpeta <code>backups</code> tenga permisos completos para todos:</p>
+<p>Responde a la siguiente pregunta:</p>
+<ul>
+<li>¿Es seguro que todo el mundo tenga acceso a la carpeta? ¿Por qué?</li>
+</ul>
+<h3 id="ejercicio-6">Ejercicio 6</h3>
+<p>Quita el permiso de escritura a "otros" en la carpeta <code>documentos</code>:</p>
+<hr />
+<h1 id="parte-4-permisos-recursivos">Parte 4: Permisos recursivos</h1>
+<h3 id="ejercicio-7">Ejercicio 7</h3>
+<p>Aplica permisos <code>755</code> a toda la carpeta <code>practica_linux</code> y su contenido:</p>
+<p>Para aplicar permisos de forma recursiva incluye -R antes de dar los permisos</p>
+<p>Ejemplo:</p>
+<pre><code class="language-bash">chmod -R 223 practica_linux
+</code></pre>
+<hr />
+<h1 id="parte-5-preguntas-teoricas">Parte 5: Preguntas teóricas</h1>
+<p>Responde a las siguientes preguntas:</p>
+<h3 id="preguntas-sobre-permisos-de-carpetas">Preguntas sobre permisos de carpetas</h3>
+<ol>
+<li>¿Para qué sirve el permiso <strong>x</strong> en una carpeta?</li>
+<li>¿Qué diferencia hay entre <code>755</code> y <code>777</code>?</li>
+<li>¿Qué significa <code>chmod 644 archivo</code>?</li>
+<li>¿Qué pasaría si una carpeta tiene permiso <code>000</code>?</li>
+</ol>
+<h3 id="preguntas-sobre-sistemas-operativos">Preguntas sobre sistemas operativos</h3>
+<ol>
+<li>
+<p>¿Qué es un sistema operativo?</p>
+<ul>
+<li>a) Un programa para escribir documentos</li>
+<li>b) Un conjunto de programas que gestionan el hardware y las aplicaciones</li>
+<li>c) Un dispositivo físico del ordenador</li>
+<li>d) Un tipo de archivo</li>
+</ul>
+</li>
+<li>
+<p>¿Cuál de estos recursos gestiona el sistema operativo?</p>
+<ul>
+<li>a) Solo la pantalla</li>
+<li>b) Solo el teclado</li>
+<li>c) CPU, memoria y dispositivos de entrada/salida</li>
+<li>d) Solo los programas</li>
+</ul>
+</li>
+<li>
+<p>¿Cuál es la función de la interfaz de usuario?</p>
+<ul>
+<li>a) Gestionar archivos</li>
+<li>b) Permitir que el usuario interactúe con el sistema</li>
+<li>c) Controlar la CPU</li>
+<li>d) Ejecutar procesos</li>
+</ul>
+</li>
+<li>
+<p>¿Qué componente gestiona los archivos?</p>
+<ul>
+<li>a) Gestor de procesos</li>
+<li>b) Sistema de archivos</li>
+<li>c) Interfaz gráfica</li>
+<li>d) BIOS</li>
+</ul>
+</li>
+<li>
+<p>Un sistema multitarea:</p>
+<ul>
+<li>a) Solo ejecuta un programa</li>
+<li>b) Ejecuta varios programas a la vez</li>
+<li>c) No ejecuta programas</li>
+<li>d) Solo sirve para móviles</li>
+</ul>
+</li>
+<li>
+<p>Un sistema multiusuario permite:</p>
+<ul>
+<li>a) Solo un usuario</li>
+<li>b) Dos usuarios</li>
+<li>c) Varios usuarios trabajando</li>
+<li>d) Ningún usuario</li>
+</ul>
+</li>
+<li>
+<p>¿Qué tipo de interfaz utiliza comandos en el terminal?</p>
+<ul>
+<li>a) GUI</li>
+<li>b) CLI</li>
+<li>c) BIOS</li>
+<li>d) Kernel</li>
+</ul>
+</li>
+<li>
+<p>¿Qué tipo de sistema usa ventanas, iconos y menús?</p>
+<ul>
+<li>a) CLI</li>
+<li>b) GUI</li>
+<li>c) Texto plano</li>
+<li>d) Consola</li>
+</ul>
+</li>
+<li>
+<p>¿Cuál de estos sistemas operativos es de código abierto?</p>
+<ul>
+<li>a) Windows</li>
+<li>b) macOS</li>
+<li>c) Linux</li>
+<li>d) iOS</li>
+</ul>
+</li>
+<li>
+<p>¿Qué es una distribución Linux?</p>
+<ul>
+<li>a) Un hardware</li>
+<li>b) Una versión completa del sistema con herramientas y software</li>
+<li>c) Un archivo</li>
+<li>d) Un programa simple</li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
