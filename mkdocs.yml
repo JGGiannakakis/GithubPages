@@ -1,19 +1,73 @@
 site_name: Apuntes Jorge Grau Giannakakis
-docs_dir: "md"
-site_dir: "docs"
+site_description: Documentación de prácticas y apuntes
+site_author: Jorge Grau
+
+docs_dir: md
+site_dir: docs
+
 nav:
-  - 1. Introducción SO: act1.md
-  - 2. Configuracion Carpetas: act2.md
-  - 3. Ejercicios configuración: ej1.md
+  - Inicio: index.md
+  - 1. Inroduccion a los algoritmos: algoritmos.md
+  - 2. Lenguaje de programación: lenguajes.md
+  - 3. Programación orientada a objetos: POO.md
+
+theme:
+  name: material
+  logo: assets/images/logo.png
+  favicon: assets/images/favicon.png
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  palette:
+    - scheme: default
+      primary: orange
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a oscuro
+
+    - scheme: slate
+      primary: purple
+      accent: purple
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a claro
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
+    - search.highlight
+    - content.code.copy
 
 markdown_extensions:
   - admonition
   - attr_list
   - md_in_html
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
 
-theme:
-  name: 'material'
-  logo: 'img/logoMarkdown.png'
-  favicon: 'img/logoMarkdown.png'
-  palette:
-    primary: 'white'
+plugins:
+  - search
+  - page-to-pdf
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/
+
+extra_javascript:
+  - https://unpkg.com/medium-zoom/dist/medium-zoom.min.js
+
+extra_css:
+  - stylesheets/extra.css
